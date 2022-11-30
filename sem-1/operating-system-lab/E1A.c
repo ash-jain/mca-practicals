@@ -39,7 +39,7 @@ int main() {
     for (i = 0; i < process_count; i++) {
 
         for (j = 0; j < process_count; j++) {
-            if ((fci == -1 && p[j].exec != 1 || p[j].arrival_time < p[fci].arrival_time && p[j].exec != 1)) {
+            if ((fci == -1 || p[j].arrival_time < p[fci].arrival_time) && p[j].exec != 1) {
                 fci = j;
             }
         }
