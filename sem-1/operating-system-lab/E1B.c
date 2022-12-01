@@ -1,5 +1,5 @@
-// Implement the following CPU scheduling.
-// A) SJFS - Shortest Job First Serve (Non Pre-emptive).
+// 1. Implement the following CPU scheduling.
+// B) SJFS - Shortest Job First Serve (Non Pre-emptive).
 
 #include <stdio.h>
 

@@ -1,4 +1,4 @@
-// Implement the following CPU scheduling.
+// 1. Implement the following CPU scheduling.
 // A) FCFS - First-Come-First-Serve.
 
 #include <stdio.h>
