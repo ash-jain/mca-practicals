@@ -36,6 +36,7 @@ int main() {
     int total_turn_around_time = 0;
     int total_waiting_time = 0;
     int lbi = -1; // Least burst index.
+
     for (i = 0; i < process_count; i++) {
 
         int delay = 0;
