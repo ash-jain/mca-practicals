@@ -91,8 +91,8 @@ int main() {
     double mean_waiting_time = (double) total_waiting_time / process_count;
     double mean_response_time = (double) total_response_time / process_count;
     printf("\nMean Turn Around Time:    \t%g.\n", mean_turn_around_time);
-    printf("Mean Waiting Time: \t%g.\n", (float) mean_waiting_time);
-    printf("Mean Response Time: \t %g.\n", (float) mean_response_time);
+    printf("Mean Waiting Time: \t%g.\n", mean_waiting_time);
+    printf("Mean Response Time: \t %g.\n", mean_response_time);
 
     return 0;
 }

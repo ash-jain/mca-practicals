@@ -41,16 +41,16 @@ int main() {
 
         int delay = 0;
         for (j = 0; j < process_count; j++) {
-            if (lbi == j || p[j].exec == 1 || (lbi != -1 && p[lbi].burst_time < p[j].burst_time)) {
+            if (lbi == j || p[j].exec == 1 || (delay == 0 && lbi != -1 && p[lbi].burst_time < p[j].burst_time)) {
                 continue;
             }
 
             if ((lbi == -1 || p[j].burst_time < p[lbi].burst_time) && p[j].arrival_time <= total_completion_time) {
                 lbi = j;
                 delay = 0;
-            } else if (lbi == -1 && p[j].arrival_time > total_completion_time) {
-                lbi = j;
-                delay = p[j].arrival_time - total_completion_time;
+            } else if ((lbi == -1 || p[j].arrival_time <= p[lbi].arrival_time) && p[j].arrival_time > total_completion_time) {
+                lbi = (p[j].burst_time < p[lbi].burst_time || lbi == -1) ? j : lbi;
+                delay = p[lbi].arrival_time - total_completion_time;
             } else if (p[j].arrival_time < total_completion_time && p[lbi].arrival_time < total_completion_time && p[lbi].burst_time == p[j].burst_time) {
                 lbi = (p[lbi].arrival_time < p[j].arrival_time) ? lbi : j;
                 delay = 0;
@@ -80,7 +80,7 @@ int main() {
     double mean_turn_around_time = (double) total_turn_around_time / process_count;
     double mean_waiting_time = (double) total_waiting_time / process_count;
     printf("\nMean Turn Around Time:    \t%g.\n", mean_turn_around_time);
-    printf("Mean Waiting Time: \t%g.\n", (float) mean_waiting_time);
+    printf("Mean Waiting Time: \t%g.\n", mean_waiting_time);
 
     return 0;
 }

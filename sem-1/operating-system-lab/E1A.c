@@ -1,5 +1,5 @@
 // 1. Implement the following CPU scheduling.
-// A) FCFS - First-Come-First-Serve.
+// A) FCFS - First Come First Serve.
 
 #include <stdio.h>
 
@@ -72,7 +72,7 @@ int main() {
     double mean_turn_around_time = (double) total_turn_around_time / process_count;
     double mean_waiting_time = (double) total_waiting_time / process_count;
     printf("\nMean Turn Around Time:    \t%g.\n", mean_turn_around_time);
-    printf("Mean Waiting Time: \t%g.\n", (float) mean_waiting_time);
+    printf("Mean Waiting Time: \t%g.\n", mean_waiting_time);
 
     return 0;
 }
