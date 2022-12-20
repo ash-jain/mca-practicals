@@ -13,7 +13,6 @@ struct process {
     int turn_around_time;
     int waiting_time;
     int response_time;
-    int exec;
 };
 
 int main() {
@@ -35,7 +34,6 @@ int main() {
         printf("Enter process %d burst time: ", i+1);
         scanf("%d", &p[i].burst_time);
         p[i].remaining_time = p[i].burst_time;
-        p[i].exec = 0;
     }
 
     int total_completion_time = 0;
@@ -48,7 +46,7 @@ int main() {
     while (count < process_count) {
 
         for (j = 0; j < process_count; j++) {
-            if (hpi == j || p[j].exec == 1)
+            if (hpi == j || p[j].remaining_time <= 0)
                 continue;
 
             if ((hpi == -1 || p[j].priority < p[hpi].priority) && p[j].arrival_time <= total_completion_time) {
@@ -72,7 +70,6 @@ int main() {
             p[hpi].completion_time = total_completion_time;
             p[hpi].turn_around_time = p[hpi].completion_time - p[hpi].arrival_time;
             p[hpi].waiting_time = p[hpi].turn_around_time - p[hpi].burst_time;
-            p[hpi].exec = 1;
             count += 1;
             total_turn_around_time += p[hpi].turn_around_time;
             total_waiting_time += p[hpi].waiting_time;
