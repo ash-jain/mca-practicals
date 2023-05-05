@@ -11,18 +11,26 @@ For example, for dictionary {'Input.txt': 'Albert', 'Code.py': 'Stanley', 'Outpu
 ['btech.txt', 'Input.txt', 'Output.txt'], 'Stanley': ['Code.py']}
 """
 
-def groupAndSortOwners(files: dict) -> dict:
 
+def groupAndSortOwners(files: dict) -> dict:
     owners = dict()
 
     for file, owner in files.items():
         owners[owner] = owners.get(owner, []) + [file]
 
     for owner in owners.keys():
-        owners[owner] = sorted(owners[owner], key = lambda s: s.lower())
+        owners[owner] = sorted(owners[owner], key=lambda s: s.lower())
 
     return owners
 
 
-print(groupAndSortOwners({'Input.txt': 'Albert', 'Code.py': 'Stanley', 'Output.txt':
-'Albert', 'btech.txt' : 'Albert'}))
+print(
+    groupAndSortOwners(
+        {
+            "Input.txt": "Albert",
+            "Code.py": "Stanley",
+            "Output.txt": "Albert",
+            "btech.txt": "Albert",
+        }
+    )
+)

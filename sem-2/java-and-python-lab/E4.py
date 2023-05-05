@@ -13,12 +13,10 @@ class Shape:
         pass
 
     def calculate_perimeter(self):
-        raise NotImplementedError(
-            "Subclass should override the abstract method.")
+        raise NotImplementedError("Subclass should override the abstract method.")
 
     def calculate_area(self):
-        raise NotImplementedError(
-            "Subclass should override the abstract method.")
+        raise NotImplementedError("Subclass should override the abstract method.")
 
 
 class Circle(Shape):
@@ -29,7 +27,7 @@ class Circle(Shape):
         return 2 * math.pi * self.radius
 
     def calculate_area(self):
-        return math.pi * self.radius ** 2
+        return math.pi * self.radius**2
 
 
 class Square(Shape):
@@ -40,7 +38,7 @@ class Square(Shape):
         return 4 * self.length
 
     def calculate_area(self):
-        return self.length ** 2
+        return self.length**2
 
 
 class Rectangle(Shape):
@@ -59,13 +57,13 @@ class Rectangle(Shape):
 
 
 c = Circle(3)
-print('Perimeter of the Circle: {0:.2f}.'.format(c.calculate_perimeter()))
-print('Area of the Circle: {0:.2f}.\n'.format(c.calculate_area()))
+print("Perimeter of the Circle: {0:.2f}.".format(c.calculate_perimeter()))
+print("Area of the Circle: {0:.2f}.\n".format(c.calculate_area()))
 
 s = Square(5)
-print('Perimeter of the Square: {0:.2f}.'.format(s.calculate_perimeter()))
-print('Area of the Square: {0:.2f}.\n'.format(s.calculate_area()))
+print("Perimeter of the Square: {0:.2f}.".format(s.calculate_perimeter()))
+print("Area of the Square: {0:.2f}.\n".format(s.calculate_area()))
 
 r = Rectangle(4, 5)
-print('Perimeter of the Rectangle: {0:.2f}.'.format(r.calculate_perimeter()))
-print('Area of the Rectangle: {0:.2f}.'.format(r.calculate_area()))
+print("Perimeter of the Rectangle: {0:.2f}.".format(r.calculate_perimeter()))
+print("Area of the Rectangle: {0:.2f}.".format(r.calculate_area()))

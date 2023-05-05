@@ -15,22 +15,24 @@ import sys
 
 
 def pattern(n: int) -> str:
-
     # Calculates the (n^2)th odd number as each line starts with it.
-    val = n ** 2 * 2 - 1
+    val = n**2 * 2 - 1
 
     # Dynamic indentation based on the largest value in the pyramid.
     indent = len(str(val))
 
     for i in range(n, 0, -1):
-        row = [] # To store the elements of each row.
+        row = []  # To store the elements of each row.
 
         for j in range(i * 2 - 1):
             row.append(str(val).rjust(indent))
             val -= 2
 
         # First string gives proper indentation and the last prints numbers.
-        print(''.join([" " * indent for i in range((n-i) * 2)]) + ((" " * indent).join(row)))
+        print(
+            "".join([" " * indent for i in range((n - i) * 2)])
+            + ((" " * indent).join(row))
+        )
 
 
 if __name__ == "__main__":

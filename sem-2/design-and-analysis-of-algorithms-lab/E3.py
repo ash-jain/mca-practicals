@@ -6,6 +6,7 @@
 A. Sorting given data using merge sort.
 """
 
+
 class MergeSort:
     def merge(self, arr1, arr2):
         arr = []
@@ -37,32 +38,6 @@ class MergeSort:
 
 if __name__ == "__main__":
     ms = MergeSort()
-    arr = list(map(int, input('Enter numbers separated by spaces: ').split(' ')))
-    print('After Sorting: ')
+    arr = list(map(int, input("Enter numbers separated by spaces: ").split(" ")))
+    print("After Sorting: ")
     print(ms.merge_sort(arr))
-
-
-
-# def merge_sort(arr, l = 0, r = None):
-#     if r is None:
-#         r = len(arr)
-#     if r - l <= 1:
-#         return None
-
-#     print(arr[l:r])
-
-#     merge_sort(arr, l, (l+r) // 2)
-#     merge_sort(arr, (l+r) // 2, r)
-
-#     i, j = l, (l+r) // 2
-#     k = l
-
-#     while k < r:
-#         if j == r or arr[i] <= arr[j]:
-#             i += 1
-#         elif i == (l+r) // 2 or arr[j] < arr[i]:
-#             arr.insert(k, arr.pop(j))
-#             i += 1
-#             k += 1
-
-#     print(arr[l:r])

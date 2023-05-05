@@ -10,8 +10,9 @@
  Take input from user.
 """
 
+
 class Node:
-    def __init__(self, data, next = None):
+    def __init__(self, data, next=None):
         self.data = data
         self.next = next
 
@@ -20,7 +21,6 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.len = 0
-
 
     def insert(self, data, index):
         if index > self.len:
@@ -33,11 +33,10 @@ class LinkedList:
             self.head = Node(data, self.head)
         else:
             curr = self.head
-            for i in range(index-1):
+            for i in range(index - 1):
                 curr = curr.next
             curr.next = Node(data, curr.next)
         self.len += 1
-
 
     def remove(self, index):
         if index >= self.len:
@@ -61,10 +60,8 @@ class LinkedList:
 
             self.len -= 1
 
-
     def __len__(self):
         return self.len
-
 
     def __str__(self):
         values = []
@@ -74,7 +71,9 @@ class LinkedList:
             values.append(str(curr.data))
             curr = curr.next
 
-        return (' -> '.join(values) if values else "None")+ f"\nThe length of the linked list is {self.len}.\n"
+        return (
+            " -> ".join(values) if values else "None"
+        ) + f"\nThe length of the linked list is {self.len}.\n"
 
 
 if __name__ == "__main__":
@@ -84,17 +83,28 @@ if __name__ == "__main__":
     res = None
 
     while res != 4:
-        res = int(input("1. Print the list.\n2. Insert an Element.\n3. Delete an Element.\n4. Exit.\n\n"))
+        res = int(
+            input(
+                "1. Print the list.\n2. Insert an Element.\n3. Delete an Element.\n4. Exit.\n\n"
+            )
+        )
         print()
 
         if res == 1:
             print(ll)
         elif res == 2:
-            data, index = list(map(int, input("Enter the element to insert and index at which to be inserted.\n").split(' ')))
+            data, index = list(
+                map(
+                    int,
+                    input(
+                        "Enter the element to insert and index at which to be inserted.\n"
+                    ).split(" "),
+                )
+            )
             ll.insert(data, index)
             print()
         elif res == 3:
-            ll.remove(int(input('Enter index of the value to be removed.\n')))
+            ll.remove(int(input("Enter index of the value to be removed.\n")))
             print()
 
     print("Exiting...")
