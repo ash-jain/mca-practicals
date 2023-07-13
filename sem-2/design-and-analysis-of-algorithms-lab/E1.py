@@ -1,7 +1,7 @@
 """
 * Student Name - Aakash Jain.
 * Roll No. - 222010019.
-* Subject - Design and Analysis of Algorithms.
+* Subject - Design and Analysis of Algorithms Lab.
 * Lab Experiment No. 1 - Write a program that uses functions to perform the following operations on singly linked list
  i) Creation 
  ii) Insertion (at any position in linked list)

@@ -1,7 +1,7 @@
 """
 * Student Name - Aakash Jain.
 * Roll No. - 222010019.
-* Subject - Design and Analysis of Algorithms.
+* Subject - Design and Analysis of Algorithms Lab.
 * Lab Experiment No. 3 - Implement the solution to the following using divide and conquer approach:
 A. Sorting given data using merge sort.
 """

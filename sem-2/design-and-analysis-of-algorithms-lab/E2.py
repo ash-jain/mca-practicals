@@ -1,7 +1,7 @@
 """
 * Student Name - Aakash Jain.
 * Roll No. - 222010019.
-* Subject - Design and Analysis of Algorithms.
+* Subject - Design and Analysis of Algorithms Lab.
 * Lab Experiment No. 2 - Implement selection sort using recursion.
 Take input from User.
 """
