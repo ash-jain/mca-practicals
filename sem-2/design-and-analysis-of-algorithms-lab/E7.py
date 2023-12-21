@@ -22,11 +22,12 @@ def dijkstras_algorithm(adjMatrix, root, target):
             if weight > 0 and distances[node] > dist + weight:
                 queue[queue.index((distances[node], node))] = (dist + weight, node)
                 distances[node] = dist + weight
+    print(distances)
 
     return distances[target]
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" and False:
     nodes = int(input("Input the number of nodes: "))
     number_of_edges = int(input("Input the number of edges: "))
 
@@ -45,14 +46,14 @@ if __name__ == "__main__":
     )
 
 
-# dijkstras_algorithm([
-#     [0, 4, 0, 0, 0, 0, 0, 8, 0],
-#     [4, 0, 8, 0, 0, 0, 0, 11, 0],
-#     [0, 8, 0, 7, 0, 4, 0, 0, 2],
-#     [0, 0, 7, 0, 9, 14, 0, 0, 0],
-#     [0, 0, 0, 9, 0, 10, 0, 0, 0],
-#     [0, 0, 4, 14, 10, 0, 2, 0, 0],
-#     [0, 0, 0, 0, 0, 2, 0, 1, 6],
-#     [8, 11, 0, 0, 0, 0, 1, 0, 7],
-#     [0, 0, 2, 0, 0, 0, 6, 7, 0]
-# ], 0, 1)
+dijkstras_algorithm([
+    [0, 4, 0, 0, 0, 0, 0, 8, 0],
+    [4, 0, 8, 0, 0, 0, 0, 11, 0],
+    [0, 8, 0, 7, 0, 4, 0, 0, 2],
+    [0, 0, 7, 0, 9, 14, 0, 0, 0],
+    [0, 0, 0, 9, 0, 10, 0, 0, 0],
+    [0, 0, 4, 14, 10, 0, 2, 0, 0],
+    [0, 0, 0, 0, 0, 2, 0, 1, 6],
+    [8, 11, 0, 0, 0, 0, 1, 0, 7],
+    [0, 0, 2, 0, 0, 0, 6, 7, 0]
+], 0, 1)

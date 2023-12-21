@@ -10,17 +10,19 @@ from collections import deque
 
 def depth_first_search(adjList, startNode):
     stack = deque([startNode])
-    visited = set([startNode])
+    visited = set([])
     res = []
 
     while stack:
         node = stack.pop()
-        res.append(node)
+
+        if node not in visited:
+            res.append(node)
+            visited.add(node)
 
         for edge in adjList[node]:
             if edge not in visited:
                 stack.append(edge)
-                visited.add(edge)
 
     return res
 

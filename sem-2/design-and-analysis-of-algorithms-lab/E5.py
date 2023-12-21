@@ -6,7 +6,6 @@
 """
 
 from collections import deque
-kp
 
 def breadth_first_search(adjList, startNode):
     q = deque([startNode])
